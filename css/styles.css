@@ -26,7 +26,15 @@ body {
     color: #333;
 }
 
+/* IMPORTANT */
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+}
 
 /****** section types de zellige et btn decouvrir********/
 
