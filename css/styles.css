@@ -25,7 +25,10 @@ body {
     background-color: #f5f9ff;
     color: #333;
 }
-
+img {
+  max-width: 100%;
+  height: auto;
+}
 /* IMPORTANT */
 * {
   box-sizing: border-box;
