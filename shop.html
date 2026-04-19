@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier du carreau</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="img/logo.ico" type="images/x-icon">
+  <style>
+    .cart-icon {
+      cursor: pointer;
+      font-size: 20px;
+      margin-left: 15px;
+      color: #333;
+    }
+
+    #cart-container {
+    position: fixed;
+    top: 123px;
+    right: 54px;
+    width: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 1000;
+    border-radius: 10px;
+  }
+
+  #cart-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  </style>
+
+<body>
+  <header>
+    <div class="navbar" id="navbar">
+      <div class="logo">
+        <div class="logoImg">
+          <div>
+            <img src="img/amine.logo.png" alt="">
+          </div>
+          <div class="cyberLogo">
+            <span class="Catelier">Atelier du Carreau</span>
+          </div>
+        </div>
+
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <i class="fas fa-bars" id="open-icon"></i>
+          <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+        </div>
+      </div>
+      <nav class="mynav">
+        <ul class="nav-links">
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="histoire.html">Histoire</a></li>
+          <li>
+            <a href="shop.html">Shop</a>
+            <ul class="dropdown">
+            </ul>
+          </li>
+          <li>
+            <a href="personnaliser.html">Personnaliser</a>
+            <ul class="dropdown">
+            </ul>
+          </li>
+
+        </ul>
+      </nav>
+      <!-- Add this inside the header just before closing the .navbar div -->
+      <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+      </div>
+      
+
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Hidden by default -->
+      <div id="cart-container" style="display: none; padding: 20px; border: 1px solid #ccc;">
+        <h2>Mon Panier</h2>
+        <div id="cart-items"></div>
+      </div>
+    <div class="text_shop">
+      <h1>Nos Produits</h1>
+      <p>Découvrez notre catalogue exclusif de zellige, composé de quatre types unique,
+        alliant tradition et modernité. Chaque pièce est façonnée à la main par des artisants de Fés
+        garantissant une qualité exceptionnelle et une authenticité inégalée.</p>
+      <p> Nos zellige se déclinent en différentes formes, couleurs et motifs, offrant une multitude de
+        possibilités pour sublimer vos espaces.Que ce soit pour un revétement mural, un sol ou un élément
+        décoratif, notre sélection répond à toutes vos envies en mélant savoir-faire ancestral.
+      </p>
+    </div>
+    <div class="container_shop">
+      <div class="produit">
+        <img src="img/1.jfif" alt="Zellige de Fès">
+        <p><strong>Origine:</strong>Fès</p>
+        <p><strong>Prix:</strong>250dh</p>
+        <p><strong>Stock:</strong>5 Pièces</p>
+        <a href="prd1.html" class="prd1">Acheter</a>
+        <a href="#" class="prd1 cartbtn" data-name="Zellige de Fes" data-price="250Dh" data-img="img/1.jfif">Ajouter au panier</a>
+
+      </div>
+      <div class="produit">
+        <img src="img/2.jfif" alt="Zellige de Marrakech">
+        <p><strong>Origine:</strong>Marrakech</p>
+        <p><strong>Prix:</strong>300Dh</p>
+        <p><strong>Stock:</strong>10 Pièces</p>
+        <a href="prd2.html" class="prd1">Acheter</a>
+        <a href="#" class="prd1 cartbtn" data-name="Zellige de Marrakech" data-price="300Dh" data-img="img/2.jfif">Ajouter au panier</a>
+      </div>
+      <div class="produit">
+        <img src="img/3.jfif" alt="Zellige de Meknès">
+        <p><strong>Origine:</strong>Meknès</p>
+        <p><strong>Prix:</strong>800Dh</p>
+        <p><strong>Stock:</strong>2 Pièces</p>
+        <a href="prd3.html" class="prd1">Acheter</a>
+        <a href="#" class="prd1 cartbtn" data-name="Zellige de Meknès" data-price="800Dh" data-img="img/3.jfif">Ajouter au panier</a>
+      </div>
+      <div class="produit">
+        <img src="img/6.jfif" alt="Zellige de Tetouan">
+        <p><strong>Origine:</strong>Tétouan</p>
+        <p><strong>Prix:</strong>900dh</p>
+        <p><strong>Stock:</strong>20 Pièces</p>
+        <a href="prd4.html" class="prd1">Acheter</a>
+        <a href="#" class="prd1 cartbtn" data-name="Zellige de Tetouan" data-price="900dh" data-img="img/6.jfif">Ajouter au panier</a>
+      </div>
+
+    </div>
+    <div class="customize">
+      <a href="personnaliser.html" class="personalisser">Personnaliser votre zellige selon votre création</a>
+    </div>
+
+
+
+  </main>
+
+  <footer>
+    <div class="contact">
+      <h3>About</h3>
+      <p>📍 Derb sultan, Rue 54, Casablanca Maroc</p>
+      <p>📞 06 12 96 55 22</p>
+      <p>📧 AtelierCaraeu@gmail.com</p>
+    </div>
+    <div class="info-links">
+      <h3>Menu</h3>
+      <ul>
+        <li><a href="accueil.html">Accueil</a></li>
+        <li><a href="histoire.html">Histoire</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="personnaliser.html">Personnalisation</a></li>
+      </ul>
+    </div>
+    <div class="social-media">
+      <h3>Suivie-Nous</h3>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-facebook"></i>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
